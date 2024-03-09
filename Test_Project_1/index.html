@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="app.css">
+    <script type="text/javascript" src="app.js"></script>
+    <title>My Calculator</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Calculator</h1>
+    <div class="container">
+        <table>
+            <tr>
+                <td colspan="3"><input type="text" id="display" ></td>
+                <td><input type="button" value="C" onclick="clearMethod()" class="clear"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="1" onclick="Display('1')" class="number"></td>
+                <td><input type="button" value="2" onclick="Display('2')" class="number"></td>
+                <td><input type="button" value="3" onclick="Display('3')" class="number"></td>
+                <td><input type="button" value="/" onclick="Divide()" class="operation"></td>
+            </tr>
+
+            <tr>
+                <td><input type="button" value="4" onclick="Display('4')" class="number"></td>
+                <td><input type="button" value="5" onclick="Display('5')" class="number"></td>
+                <td><input type="button" value="6" onclick="Display('6')" class="number"></td>
+                <td><input type="button" value="-" onclick="Subtract()" class="operation"></td>
+            </tr>
+
+            <tr>
+                <td><input type="button" value="7" onclick="Display('7')" class="number"></td>
+                <td><input type="button" value="8" onclick="Display('8')" class="number"></td>
+                <td><input type="button" value="9" onclick="Display('9')" class="number"></td>
+                <td><input type="button" value="+" onclick="Add()" class="operation"></td>
+            </tr>
+
+            <tr>
+                <td><input type="button" value="." onclick="Display('.')" class="number"></td>
+                <td><input type="button" value="0" onclick="Display('0')" class="number"></td>
+                <td><input type="button" value="=" onclick="Enter()" class="operation"></td>
+                <td><input type="button" value="*" onclick="Multiply()" class="operation"></td>
+            </tr>
+
+        </table>
+    </div>
+</body>
+</html>
