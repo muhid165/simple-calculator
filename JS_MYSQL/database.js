@@ -15,13 +15,13 @@ const pool = mysql.createPool({             // pool == connections of connection
 
 
 
-async function getNotes() {                     // This function will return all the notes in the notes table !!
+export async function getNotes() {                     // This function will return all the notes in the notes table !!
     const [rows] = await pool.query(("SELECT * FROM notes"));
     return rows;
 };
 
 
-async function getOneNote(id) {
+export async function getOneNote(id) {
     const [rows] = await pool.query((`
     SELECT * FROM notes
     where id = ${id};
@@ -32,18 +32,27 @@ async function getOneNote(id) {
 // const notes = await getOneNote(1);
 
 
-async function createNote(title, contents){
+export async function createNote(title, contents){            //this functio returns the only row of the table by inserting the value of a singlr row and then using the insertID of that row in the grtOneNote funtion to return the added note  
     const [result] = await pool.query((`
     insert into notes (title, contents)
     values 
     ('${title}','${contents}');                                 
-    `));                                                    //(${title},${contents});
+    `));                                                    
     
     const newID = result.insertId
     return getOneNote(newID);
 }
 
-let ttl = "note4";
-let cnts = "A Fourth Note";
-const result = await createNote(ttl,cnts);
-console.log(result);
+let ttl = "note";
+let cnts = "Test";
+// const result = await createNote(ttl,cnts);
+// console.log(result);
+
+
+
+
+
+
+
+
+
